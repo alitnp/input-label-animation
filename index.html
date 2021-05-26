@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<title>input-label-animation</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- با اینکه از لیبل به عنوان پلیس هولدر استفاده میشه،
+				 اما یک پلیس هودر با یک اسپیس به اینپوتها میدهیم، 
+				انجام اینکار برای تشخیص خالی بودن یا دارای ولیو بودن اینپوت در سی اس اس است -->
+			<input type="text" placeholder=" " />
+			<!-- ،از آنجایی که سی اس اس سلکتوری برای المنت قبلی ندارد
+				اما انتخاب المنتی بعد از یک المنت خاص مشکلی ندارد
+			لیبل را بعد از اینپوت میاریم، و با پوزیشن دادن داخل سی اس اس میاریمش بالا -->
+			<label class="label" for="">نام کاربری</label>
+			<small>آدرس ایمیل یا شماره موبایل</small>
+		</div>
+		<div class="wrapper">
+			<input type="password" placeholder=" " />
+			<label class="label" for="">رمز عبور</label>
+			<small>۸ کاراکتر شامل حرف و عدد</small>
+		</div>
+		<div class="wrapper">
+			<input type="password" placeholder=" " disabled="true" />
+			<label class="label" for="">غیر فعال شده</label>
+			<small>۸ کاراکتر شامل حرف و عدد</small>
+		</div>
+		<div class="wrapper">
+			<input type="email" placeholder=" " value="aaa.com" />
+			<label class="label" for="">غیرمجاز</label>
+			<small>آدرس ایمیل</small>
+		</div>
+	</body>
+</html>

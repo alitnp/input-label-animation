@@ -1,0 +1,125 @@
+@font-face {
+	font-family: vazir;
+	src: url("/Vazir-Regular-UI.woff2");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	direction: rtl;
+	font-family: vazir;
+	color: #707070;
+}
+
+body {
+	background-color: #101010;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.wrapper {
+	position: relative;
+	width: fit-content;
+	height: 50px;
+	margin-bottom: 35px;
+}
+
+/* انتخاب اینپوت در حالت عادی */
+input {
+	width: 350px;
+	height: 50px;
+	border: 1px solid transparent;
+	outline: none;
+	appearance: none;
+	background-color: #262628;
+	color: #ffffff;
+	line-height: 50px;
+	border-radius: 0.5rem;
+	padding-right: 24px;
+	font-size: 1.2rem;
+}
+
+/* انتخاب لیبل در حالت عادی */
+label {
+	display: block;
+	position: absolute;
+	font-size: 1.2rem;
+	font-weight: bold;
+	height: 50px;
+	line-height: 50px;
+	right: 25px;
+	top: 0px;
+	transition: all 0.2s linear;
+}
+
+/* انتخاب اینپوت وقتی توسط کاربر فکوس شد */
+input:focus {
+	border-color: #707070;
+}
+
+/* انتخاب چند المنت و اعمال یک استایل به همه، مثل پایین */
+
+/* انتخاب لیبل وقتی موس بر روی آن قرار دارد */
+label:hover,/* و */
+/* وقتی اینپوت هاور شد، لیبل را انتخاب کن */
+input:hover + label,/* و */
+/* وقتی اینپوت فکوس شد، لیبل را انتخاب کن */
+input:focus + label,/* و */
+/* وقتی که پلیس هولدر نمایش داده نمیشد، لیبل را انتخاب کن*/
+input:not(:placeholder-shown) + label {
+	top: -40px;
+	font-weight: normal;
+	font-size: 1rem;
+}
+
+/* وقتی که اینپوت فکوس نیست و پلیس هولدر در آن نمایش
+ داده نمی شود و اینولید هم نیست، لیبل را انتخاب کن */
+input:not(:focus):not(:placeholder-shown):not(:invalid) + label {
+	color: #189858;
+}
+
+small {
+	display: none;
+	text-align: left;
+	color: #707070;
+}
+
+/* وقتی که اینپوت فکوس شد اسمال را انتخاب کن */
+input:focus ~ small {
+	display: block;
+}
+
+/* اینپوتی که غیرفعال شده */
+input:disabled {
+	cursor: not-allowed;
+	background-color: #bdbdbd;
+}
+
+/* وقتی اینپوت غیر فعال شد، لیبل آنرا انتخاب کن */
+input:disabled + label {
+	top: 0px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: not-allowed;
+}
+
+/* تمام اینپوت هایی که تایپ آنها ایمیل است */
+input[type="email"],
+/* تمام اینپوت هایی که تایپ آنها پسورد است */
+input[type="password"] {
+	direction: ltr;
+	text-align: right;
+}
+
+/* تمام اینپوت های اینولید */
+input:invalid {
+	border-color: #a75959;
+}
+
+/* وقتی اینپوت اینولید شد، لیبل را انتخاب کن*/
+input:invalid + label {
+	color: #a75959;
+}
